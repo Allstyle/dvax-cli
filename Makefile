@@ -9,5 +9,5 @@ publish: build
 	npm publish
 
 publish-sync: publish
-	cnpm sync dva-cli
-	tnpm sync dva-cli
+	cnpm sync dvax-cli
+	tnpm sync dvax-cli
