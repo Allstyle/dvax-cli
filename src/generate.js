@@ -33,6 +33,7 @@ function generate(program, { cwd }) {
   const [type, name] = program.args;
   const arr = name.split('/')
   const namespace = _.takeRight(arr).join()
+  const starsPath = _.times(arr.length, () => '../').join('')
 
   try {
     switch (type) {
@@ -40,7 +41,6 @@ function generate(program, { cwd }) {
         (() => {
           const modelPath = `./models/${name}`;
           const filePath = `${base}/models/${name}.js`;
-          const starsPath = _.times(arr.length, () => '../').join('')
           info('create', `model ${name} namespace ${namespace}`);
           api('models.create', {
             namespace: namespace,
@@ -60,6 +60,7 @@ function generate(program, { cwd }) {
             sourcePath: cwd,
             filePath: serviceFilePath,
             path: servicePath,
+            utilPath: starsPath,
           });
         })();
         break;
@@ -73,6 +74,7 @@ function generate(program, { cwd }) {
             sourcePath: cwd,
             filePath: serviceFilePath,
             path: servicePath,
+            utilPath: starsPath,
           });
         })();
         break;
@@ -114,7 +116,6 @@ function generate(program, { cwd }) {
           //model
           const modelPath = `./models/${name}`;
           const filePath = `${base}/models/${name}.js`;
-          const starsPath = _.times(arr.length, () => '../').join('')
 
           info('create', `model ${name} namespace ${namespace}`);
           api('models.create', {
@@ -136,6 +137,7 @@ function generate(program, { cwd }) {
             sourcePath: cwd,
             filePath: serviceFilePath,
             path: servicePath,
+            utilPath: starsPath,
           });
 
           //route
