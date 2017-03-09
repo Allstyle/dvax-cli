@@ -29,9 +29,10 @@ function generate(program, { cwd }) {
   const rc = getBabelRc(cwd);
   const base = program.base || rc.base || defaultBase;
   const defaultEntry = `${base}/index.js`;
-  const defaultRouter = `${base}/router.js`;
 
   const [type, name] = program.args;
+  const arr = name.split('/')
+  const namespace = _.takeRight(arr).join()
 
   try {
     switch (type) {
@@ -39,28 +40,55 @@ function generate(program, { cwd }) {
         (() => {
           const modelPath = `./models/${name}`;
           const filePath = `${base}/models/${name}.js`;
-          const entry = program.entry || defaultEntry;
-          info('create', `model ${name}`);
-          info('register', `to entry ${entry}`);
+          const starsPath = _.times(arr.length, () => '../').join('')
+          info('create', `model ${name} namespace ${namespace}`);
           api('models.create', {
-            namespace: _.camelCase(name),
+            namespace: namespace,
+            service: name,
+            pathname: name,
+            starsPath: starsPath,
             sourcePath: cwd,
             filePath,
-            entry,
             modelPath,
+          });
+
+          const servicePath = `./services/${name}`;
+          const serviceFilePath = `${base}/services/${name}.js`;
+          info('create', `service ${name}`);
+          api('services.create', {
+            serviceName: name,
+            sourcePath: cwd,
+            filePath: serviceFilePath,
+            path: servicePath,
+          });
+        })();
+        break;
+      case 'service':
+        (() => {
+          const servicePath = `./services/${name}`;
+          const serviceFilePath = `${base}/services/${name}.js`;
+          info('create', `service ${name}`);
+          api('services.create', {
+            serviceName: name,
+            sourcePath: cwd,
+            filePath: serviceFilePath,
+            path: servicePath,
           });
         })();
         break;
       case 'route':
         (() => {
-          const componentName = upperCamelCase(name);
-          const componentPath = `${base}/routes/${componentName}.js`;
-          const componentCSSPath = `${base}/routes/${componentName}.css`;
+          const componentName = _.upperFirst(namespace)
+          arr[arr.length-1] = componentName
+          const pathName = _.join(arr, '/')
+
+          const componentPath = `${base}/routes/${pathName}.js`;
           info('create', `routeComponent ${componentPath}`);
           api('routeComponents.create', {
             sourcePath: cwd,
             filePath: componentPath,
             componentName,
+            namespace: namespace,
             state: program.state,
           });
         })();
@@ -82,8 +110,6 @@ function generate(program, { cwd }) {
         break;
       case 'module':
         (() => {
-          const arr = name.split('/')
-          const namespace = _.takeRight(arr).join()
 
           //model
           const modelPath = `./models/${name}`;

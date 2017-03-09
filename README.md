@@ -2,8 +2,14 @@
 [![NPM version](https://img.shields.io/npm/v/dva-cli.svg?style=flat)](https://npmjs.org/package/dva-cli)
 [![NPM downloads](http://img.shields.io/npm/dm/dva-cli.svg?style=flat)](https://npmjs.org/package/dva-cli)
 
-CLI for [dva](https://github.com/dvajs/dva) .
+CLI for [dva](https://github.com/dvajs/dva) . X-custom
 
+## Custom Feature
+>* use [styled-component](https://github.com/styled-components/styled-components)
+>* add state component boilerplate (eg: dvax g route --state)
+>* add generate service  
+>* add generate module (gen model,route,service together)
+>* add dynamic router
 
 ## Getting Started
 
@@ -11,10 +17,10 @@ Install, create and start.
 
 ```bash
 # Install
-$ npm install dva-cli -g
+$ npm install dvax-cli -g
 
 # Create app
-$ dva new myapp
+$ dvax new myapp
 
 # Start app
 $ cd myapp
@@ -25,16 +31,16 @@ $ npm start
 
 We have 3 commands: `new`, `init` and `generate`(alias `g`).
 
-### dva new <appName> [options]
+### dvax new <appName> [options]
 
 Create app with new directory.
 
 #### Usage Examples
 
 ```bash
-$ dva new myapp
-$ dva new myapp --demo
-$ dva new myapp --no-install
+$ dvax new myapp
+$ dvax new myapp --demo
+$ dvax new myapp --no-install
 ```
 
 #### options
@@ -42,22 +48,24 @@ $ dva new myapp --no-install
 * `--demo` -- Generate a dead simple project for quick prototype
 * `--no-install` -- Disable npm install after files created
 
-### dva init [options]
+### dvax init [options]
 
-Create app in current directory. It's options is the same as `dva new`.
+Create app in current directory. It's options is the same as `dvax new`.
 
-### dva generate <type> <name> (short-cut alias: "g")
+### dvax generate <type> <name> (short-cut alias: "g")
 
 Generate route, model and component.
 
 #### Usage Examples
 
 ```bash
-$ dva g route product-list
-$ dva g model products
-$ dva g component Editor
-$ dva g component Users/UserModal
-$ dva g component Header --no-css
+$ dvax g route product-list
+$ dvax g model products
+$ dvax g service products
+$ dvax g comp Editor
+$ dvax g comp Users/UserModal
+$ dvax g comp Header --state
+$ dvax g module dict
 ```
 
 ## Generated File Tree
@@ -85,7 +93,7 @@ $ dva g component Header --no-css
 
 ## Configuration
 
-dva-cli use [roadhog](https://github.com/sorrycc/roadhog) for build and server, view [roadhog#Configuration](https://github.com/sorrycc/roadhog/blob/master/README_en-us.md#configuration) ([中文版](https://github.com/sorrycc/roadhog#配置)) for details.
+dvax-cli use [roadhog](https://github.com/sorrycc/roadhog) for build and server, view [roadhog#Configuration](https://github.com/sorrycc/roadhog/blob/master/README_en-us.md#configuration) ([中文版](https://github.com/sorrycc/roadhog#配置)) for details.
 
 ## License
 

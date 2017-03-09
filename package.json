@@ -1,7 +1,7 @@
 {
   "name": "dvax-cli",
-  "version": "0.1.3",
-  "description": "The dva command line utility.",
+  "version": "0.1.4",
+  "description": "The dva command line utility. X-custom",
   "repository": {
     "type": "git",
     "url": "https://github.com/liekkas/dvax-cli"
