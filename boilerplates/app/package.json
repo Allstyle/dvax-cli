@@ -1,4 +1,7 @@
 {
+  "name": "dvax-demo",
+  "version": "0.1.0",
+  "description": "The dvax demo",
   "private": true,
   "scripts": {
     "start": "PORT=4000 HOST=localhost roadhog server",
