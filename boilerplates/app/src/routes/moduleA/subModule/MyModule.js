@@ -1,6 +1,3 @@
-/**
- * Created by liekkas on 2017/3/27.
- */
 import React from 'react'
 import { connect } from 'dva'
 import styled from 'styled-components'

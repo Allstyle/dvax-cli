@@ -1,6 +1,3 @@
-/**
- * Created by liekkas on 2017/3/17.
- */
 import request from '../utils/request'
 
 export function fetch (api) {

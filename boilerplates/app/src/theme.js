@@ -1,6 +1,3 @@
-/**
- * Created by liekkas on 2017/3/27.
- */
 module.exports = {
   // 带-的变量为antd准备
   'primary-color': '#00a2ae',
@@ -21,9 +18,5 @@ module.exports = {
   footer: {
     color: '#cfedf0',
     bgColor: '#00a2ae'
-  },
-
-  sideNav: {
-    bgColor: '#f3f3f3'
   }
 }

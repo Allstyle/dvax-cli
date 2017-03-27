@@ -1,6 +1,3 @@
-/**
- * Created by liekkas on 2017/3/1.
- */
 import React from 'react'
 import ReactDOM from 'react-dom'
 import styled, { ThemeProvider } from 'styled-components'

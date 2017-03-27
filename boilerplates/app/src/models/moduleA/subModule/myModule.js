@@ -1,6 +1,3 @@
-/**
- * Created by liekkas on 2017/3/27.
- */
 import * as service from '../../../services/crud'
 import REST_API from '../../../consts/api'
 import _ from 'lodash'

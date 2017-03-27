@@ -1,6 +1,3 @@
-/**
- * Created by liekkas on 2017/3/1.
- */
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'dva/router'

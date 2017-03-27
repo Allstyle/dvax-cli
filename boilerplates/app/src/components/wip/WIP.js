@@ -1,6 +1,3 @@
-/**
- * Created by liekkas on 2016/12/25.
- */
 import React from 'react'
 import styled from 'styled-components'
 import config from '../../config'

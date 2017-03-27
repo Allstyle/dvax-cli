@@ -1,6 +1,3 @@
-/**
- * Created by liekkas on 2017/3/2.
- */
 import React from 'react'
 import { Menu, Icon } from 'antd'
 import { Link } from 'dva/router'
