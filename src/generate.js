@@ -52,16 +52,6 @@ function generate(program, { cwd }) {
             modelPath,
           });
 
-          const servicePath = `./services/${name}`;
-          const serviceFilePath = `${base}/services/${name}.js`;
-          info('create', `service ${name}`);
-          api('services.create', {
-            serviceName: name,
-            sourcePath: cwd,
-            filePath: serviceFilePath,
-            path: servicePath,
-            utilPath: starsPath,
-          });
         })();
         break;
       case 'service':
@@ -126,18 +116,6 @@ function generate(program, { cwd }) {
             sourcePath: cwd,
             filePath,
             modelPath,
-          });
-
-          //service
-          const servicePath = `./services/${name}`;
-          const serviceFilePath = `${base}/services/${name}.js`;
-          info('create', `service ${name}`);
-          api('services.create', {
-            serviceName: name,
-            sourcePath: cwd,
-            filePath: serviceFilePath,
-            path: servicePath,
-            utilPath: starsPath,
           });
 
           //route
