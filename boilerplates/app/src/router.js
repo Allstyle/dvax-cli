@@ -14,7 +14,7 @@ const genRoute = (app, name, model, component) => {
   return {
     path: name,
     name,
-    getComponent(nextState, cb) {
+    getComponent (nextState, cb) {
       require.ensure([], () => {
         registerModel(app, model)
         cb(null, component)
@@ -23,12 +23,12 @@ const genRoute = (app, name, model, component) => {
   }
 }
 
-function RouterConfig({ history, app }) {
+function RouterConfig ({ history, app }) {
   const routes = [
     {
       path: '/',
       component: App,
-      getIndexRoute(nextState, cb) {
+      getIndexRoute (nextState, cb) {
         require.ensure([], require => {
           registerModel(app, require('./models/home/home'))
           cb(null, {component: require('./routes/home/Home')})
@@ -36,12 +36,13 @@ function RouterConfig({ history, app }) {
       },
       childRoutes: [
         genRoute(app, 'home', require('./models/home/home'), require('./routes/home/Home')),
+        genRoute(app, '/moduleA/subModule/myModule', require('./models/moduleA/subModule/myModule'), require('./routes/moduleA/subModule/MyModule')),
 
         // 404
         {
           path: '*',
           name: 'notFound',
-          getComponent(nextState, cb) {
+          getComponent (nextState, cb) {
             require.ensure([], require => {
               cb(null, require('./routes/NotFound'))
             })

@@ -1,15 +1,17 @@
 {
   "entry": "src/index.js",
+  "disableCSSModules": true,
+  "autoprefixer": null,
+  "proxy": null,
+  "theme": "./src/theme.js",
+  "extraBabelPlugins": [
+    "transform-runtime",
+    ["import", { "libraryName": "antd", "style": "true" }]
+  ],
   "env": {
     "development": {
       "extraBabelPlugins": [
-        "dva-hmr",
-        "transform-runtime"
-      ]
-    },
-    "production": {
-      "extraBabelPlugins": [
-        "transform-runtime"
+        "dva-hmr"
       ]
     }
   }

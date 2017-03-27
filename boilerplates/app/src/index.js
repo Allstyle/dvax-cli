@@ -1,18 +1,17 @@
-import dva from 'dva';
-import './index.css';
+import dva from 'dva'
+// import {browserHistory} from 'dva/router'
+import 'antd/dist/antd.less'
+import createLoading from 'dva-loading'
 
-// 1. Initialize
-const app = dva();
+const app = dva({
+//   history: browserHistory,
+  onError (e) {
+    console.error(e.message)
+  }
+})
 
+app.use(createLoading())
 
-// 2. Plugins
-// app.use({});
+app.router(require('./router'))
 
-// 3. Model
-// app.model(require('./models/example'));
-
-// 4. Router
-app.router(require('./router'));
-
-// 5. Start
-app.start('#root');
+app.start('#root')
