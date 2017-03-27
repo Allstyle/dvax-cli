@@ -1,6 +1,7 @@
 module.exports = {
   // 带-的变量为antd准备
   'primary-color': '#00a2ae',
+  'icon-url': `'/fonts/antd/iconfont'`,
 
   // 自定义的变量
   color: '#FF0000',

@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'dva/router'
 import MenuData from '../../consts/menu'
-import config from '../../config'
 
 const Root = styled.div`
   position: fixed;
@@ -39,7 +38,7 @@ const Header = ({module}) => {
   return (
     <Root isHome={module === 'home'}>
       <Link to='/home'>
-        <LogoImg src={config.ASSETS_API + '/logo.png'} />
+        <LogoImg src={'assets/logo.png'} />
       </Link>
       <Menu>
         {
