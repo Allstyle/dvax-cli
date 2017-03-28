@@ -1,6 +1,5 @@
 module.exports = {
-  ASSETS_API: 'http://localhost:4000',
-  DATA_API: 'http://localhost:3000',
+  REST_API: 'http://localhost:4001/api',
 
-  footerText: '©2017 DVAX'
+  FOOTER_TEXT: '©2017 DVAX'
 }

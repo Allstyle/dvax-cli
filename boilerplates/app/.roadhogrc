@@ -1,6 +1,6 @@
 {
   "entry": "src/index.js",
-  "disableCSSModules": true,
+  "disableCSSModules": false,
   "autoprefixer": null,
   "proxy": null,
   "theme": "./src/theme.js",

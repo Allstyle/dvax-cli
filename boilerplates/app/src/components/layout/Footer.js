@@ -13,6 +13,6 @@ const Root = styled.div`
     width: 100%;
 `
 
-const Footer = () => <Root>{config.footerText}</Root>
+const Footer = () => <Root>{config.FOOTER_TEXT}</Root>
 
 export default Footer
