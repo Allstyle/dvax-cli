@@ -3,21 +3,20 @@
   "version": "0.1.0",
   "description": "The dvax demo",
   "scripts": {
-    "start": "PORT=4000 HOST=localhost roadhog server",
-    "build": "roadhog build",
-    "lint": "standard --verbose | snazzy",
-    "lint:fix": "standard --fix",
-    "test": "jest --watch",
-    "precommit": "npm run lint && jest"
+    "start": "roadhog server",
+    "build": "roadhog build"
   },
   "dependencies": {
-    "antd": "^2.8.3",
-    "babel-runtime": "^6.9.2",
+    "antd": "^2.10.0",
     "dva": "^1.2.1",
     "dva-loading": "^0.2.0",
+    "echarts": "^3.5.4",
     "lodash": "^4.17.4",
+    "re-echarts": "^1.0.9",
     "react": "^15.4.0",
     "react-dom": "^15.4.0",
+    "sockjs-client": "^1.1.4",
+    "stompjs": "^2.3.3",
     "styled-components": "^1.4.4"
   },
   "devDependencies": {
@@ -25,6 +24,7 @@
     "babel-plugin-dva-hmr": "^0.2.0",
     "babel-plugin-import": "^1.1.0",
     "babel-plugin-transform-runtime": "^6.9.0",
+    "babel-runtime": "^6.9.2",
     "husky": "^0.12.0",
     "jest": "^19.0.2",
     "redbox-react": "^1.3.2",

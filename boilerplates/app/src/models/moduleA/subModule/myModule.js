@@ -31,8 +31,9 @@ export default {
   },
   effects: {
     * fetch ({ payload }, {call, put}) {
-      const {data} = yield call(service.fetch, api)
-      yield put({type: 'fetchSuccess', payload: data})
+      const {data: fromMockJS} = yield call(service.fetch, api)
+      const {data: fromJSON} = yield call(service.fetch, REST_API.static.user)
+      yield put({type: 'fetchSuccess', payload: {name:`${fromMockJS.name} && ${fromJSON.data}`}})
     },
 
     * create ({ payload: values }, { call, put }) {

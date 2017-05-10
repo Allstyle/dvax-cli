@@ -1,6 +1,6 @@
 import dva from 'dva'
 // import {browserHistory} from 'dva/router'
-import 'antd/dist/antd.less'
+import './styles/index.less'
 
 import createLoading from 'dva-loading'
 

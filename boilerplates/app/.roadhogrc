@@ -2,7 +2,13 @@
   "entry": "src/index.js",
   "disableCSSModules": false,
   "autoprefixer": null,
-  "proxy": null,
+  "proxy": {
+    "/api": {
+      "target": "http://localhost:4000/",
+      "changeOrigin": true,
+      "pathRewrite": { "^/api" : "" }
+    }
+  },
   "theme": "./src/theme.js",
   "extraBabelPlugins": [
     "transform-runtime",

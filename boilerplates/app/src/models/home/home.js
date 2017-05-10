@@ -1,4 +1,5 @@
 import * as service from '../../services/crud'
+import {listen} from '../../services/ws'
 
 export default {
   namespace: 'home',
@@ -24,6 +25,9 @@ export default {
       return history.listen(({pathname, query}) => {
         if (pathname === '/home') {
           dispatch({type: 'fetch', payload: query})
+          listen(data => {
+            dispatch({type: 'receiveAlarm', payload: data})
+          }, '/topic/alarm')
         }
       })
     }
